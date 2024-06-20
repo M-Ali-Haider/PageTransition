@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "export",
   basePath: "/PageTransition",
-  // basePath:""
+  //   basePath: "",
 };
 
 export default nextConfig;

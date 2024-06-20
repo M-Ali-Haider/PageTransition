@@ -34,6 +34,7 @@ function FrozenRouter({ children }) {
 export default function PageTransition({ children }) {
   const pathName = usePathname();
   const animation = animations.find((animation) => animation.href === pathName);
+  const animationName = animation ? animation.name : "";
 
   const [dimensions, setDimensions] = useState({
     height: 0,
@@ -92,7 +93,7 @@ export default function PageTransition({ children }) {
             {...anim(text)}
             className={`${styles.route} whitespace-nowrap`}
           >
-            {animation.name}
+            {animationName}
           </motion.div>
           {dimensions.width > 0 && <SVG {...dimensions} />}
           <FrozenRouter>{children}</FrozenRouter>
